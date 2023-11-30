@@ -57,7 +57,18 @@ public class TestSame
     }
 
 
+
+    @Test
+    public void testing24HourClock()
+    {
+        ClockTime clockTim1 = new ClockTime(23, 01, 01);
+        clockTim1.setHour(23);
+        clockTim1.setMinute(01);
+        clockTim1.setSecond(01);
+        assertEquals("23:01:01", clockTim1.toString());
+    }
 }
+
 
 
 
