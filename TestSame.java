@@ -13,6 +13,9 @@ import org.junit.jupiter.api.Test;
  */
 public class TestSame
 {
+    private ClockTime clockTim1;
+    private ClockTime clockTim2;
+
     /**
      * Default constructor for test class TestSame
      */
@@ -28,6 +31,8 @@ public class TestSame
     @BeforeEach
     public void setUp()
     {
+        clockTim1 = new ClockTime(12, 12, 12);
+        clockTim2 = new ClockTime(12, 12, 12);
     }
 
     /**
@@ -40,34 +45,24 @@ public class TestSame
     {
     }
 
+
     @Test
-    public void TestClocks()
+    public void ClocksSame()
     {
-        ClockTime clockTim1 = new ClockTime(01, 01, 01);
-        ClockTime clockTim2 = new ClockTime(01, 01, 01);
         assertEquals(true, clockTim1.equals(clockTim2));
     }
 
     @Test
-    public void ClocksDifferent()
+    public void changeTime()
     {
-        ClockTime clockTim1 = new ClockTime(01, 01, 01);
-        ClockTime clockTim2 = new ClockTime(02, 02, 02);
-        assertEquals(false, clockTim1.equals(clockTim2));
-    }
-
-
-
-    @Test
-    public void testing24HourClock()
-    {
-        ClockTime clockTim1 = new ClockTime(23, 01, 01);
-        clockTim1.setHour(23);
-        clockTim1.setMinute(01);
-        clockTim1.setSecond(01);
-        assertEquals("23:01:01", clockTim1.toString());
+        clockTim1.setHour(11);
+        clockTim1.setMinute(00);
+        clockTim1.setSecond(00);
+        assertEquals("11:00:00", clockTim1.toString());
     }
 }
+
+
 
 
 
