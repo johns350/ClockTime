@@ -60,7 +60,38 @@ public class TestSame
         clockTim1.setSecond(00);
         assertEquals("11:00:00", clockTim1.toString());
     }
+
+    @Test
+    public void Different()
+    {
+        clockTim1.setHour(11);
+        clockTim1.setMinute(00);
+        clockTim1.setSecond(00);
+        clockTim1.equals(clockTim2);
+    }
+
+    @Test
+    public void print24HourCLock()
+    {
+        clockTim1.setHour(23);
+        clockTim1.setMinute(01);
+        clockTim1.setSecond(01);
+        assertEquals("23:01:01", clockTim1.toString());
+    }
+
+    @Test
+    public void print12HourClock()
+    {
+        clockTim1.setHour(11);
+        clockTim1.setMinute(01);
+        clockTim1.setSecond(01);
+        assertEquals("11:01:01", clockTim1.toString());
+    }
 }
+
+
+
+
 
 
 
